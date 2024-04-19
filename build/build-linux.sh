@@ -1,2 +1,2 @@
-cmake -G "Unix Makefiles" -DNDEBUG ..
+cmake -G "Unix Makefiles" -DNDEBUG=ON ..
 make

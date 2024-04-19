@@ -11,8 +11,6 @@ option(NDEBUG "Whether to suppress asserts and array bound checks" ON)
 
 if (NATIVECPU)
     add_definitions(-march=native -mtune=native)
-else ()
-    add_definitions(-march=nocona -mtune=generic)
 endif (NATIVECPU)
 
 if (DISABLE_ZLIB)
