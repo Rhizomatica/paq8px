@@ -2,6 +2,10 @@
 # prepare with:
 # sudo apt update
 # sudo apt install gcc g++
+#------------------------
+# if you're on arch, use these instead:
+# sudo pacman -Syu
+# sudo pacman -S gcc g++
 
 gcc -c -DNDEBUG -I../zlib/ -O3 -fno-fast-math -ffp-contract=off -flto=auto -funroll-loops -ftree-vectorize -fexceptions -include unistd.h ../zlib/adler32.c ../zlib/crc32.c ../zlib/deflate.c ../zlib/gzlib.c ../zlib/inffast.c ../zlib/inflate.c ../zlib/inftrees.c ../zlib/trees.c ../zlib/zutil.c 
 
