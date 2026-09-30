@@ -1,0 +1,22 @@
+Source: paq8px
+Section: utils
+Priority: optional
+Maintainer: Rafael Diniz <rafael@rhizomatica.org>
+Build-Depends: debhelper-compat (= 13), cmake
+Standards-Version: 4.6.2
+Homepage: https://github.com/hxim/paq8px
+Vcs-Git: https://github.com/Rhizomatica/paq8px.git
+Rules-Requires-Root: no
+
+Package: paq8px
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: experimental lossless data compressor (PAQ8 family)
+ paq8px is a context-mixing lossless compressor with very high
+ compression ratios, at the cost of speed and memory.
+ .
+ HERMES stations use it to compress sensor data before sending it over
+ HF radio. Archives are only readable by the same paq8px version, so
+ every station of a network must run the same package version.
+ .
+ Built for generic CPUs of each architecture (no -march=native).
