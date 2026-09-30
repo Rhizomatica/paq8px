@@ -1,0 +1,11 @@
+paq8px (217-1) unstable; urgency=medium
+
+  * Package paq8px v217 for the HERMES repository.
+  * Built with NATIVECPU=OFF, so the binary runs on any CPU of its
+    architecture. HERMES installs used to build it on the station with
+    -march=native, which in an emulated image build targets the emulator's
+    CPU rather than the Raspberry Pi's.
+  * Archives are version-specific: stations exchanging paq8px data (the
+    sensor data of hermes-sensors) must all run this version.
+
+ -- Rafael Diniz <rafael@rhizomatica.org>  Wed, 30 Sep 2026 23:00:00 +0100

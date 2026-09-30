@@ -1,0 +1,16 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@ --buildsystem=cmake
+
+# NATIVECPU=OFF: a package must run on every CPU of its architecture
+# (-march=armv8-a on arm64, nocona on amd64), not only on the build host.
+override_dh_auto_configure:
+	dh_auto_configure -- -DNATIVECPU=OFF -DNDEBUG=ON
+
+# upstream has no install target
+override_dh_auto_install:
+	install -D -m 0755 obj-$(DEB_HOST_GNU_TYPE)/paq8px debian/paq8px/usr/bin/paq8px
+
+# the tests are upstream's benchmark corpus, not part of the build
+override_dh_auto_test:
